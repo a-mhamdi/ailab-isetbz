@@ -1,32 +1,11 @@
-// This function gets your whole document as its `body` and formats
-// it as an article in the style of the IEEE.
 
-#import "@preview/octique:0.1.0": *
-
-#let ieee(
-
-  // The paper's title.
-  title: [Paper Title],
-
-  // An array of authors. For each author you can specify a name,
-  // department, organization, location, and email. Everything but
-  // but the name is optional.
+#let AILAB(
+  title: [Lab Report Title],
   authors: (),
-
-  // The paper's abstract. Can be omitted if you don't have one.
   abstract: none,
-
-  // A list of index terms to display after the abstract.
   index-terms: (),
-
-  // The article's paper size. Also affects the margins.
   paper-size: "a4",
-
-  // The path to a bibliography file if you want to cite some external
-  // works.
   bibliography-file: none,
-
-  // The paper's content.
   body
 ) = {
   // Set document metadata.
@@ -197,5 +176,28 @@
     show bibliography: set text(8pt)
     bibliography(bibliography-file, title: text(10pt)[References], style: "ieee")
   }
+  
+  // EXO
+set page(height: 100pt)
+let c = counter("exo")
+let exo(tlt, txt) = block[
+  #c.step()
+  #rect(fill: red, radius: 5pt)[*Task #context c.display(): #tlt *] 
+  #rect(fill: luma(221))[#txt]
+]
+
+// SOLUTION
+let solution(sol) = block[
+  #rect(fill: olive)[#sol]
+]
+
+// TEST SCENARIO
+let test(tst) = [
+#box(
+	height: 25pt,
+	image("attention.png", width: 10%)
+)
+#tst
+]
 
 }

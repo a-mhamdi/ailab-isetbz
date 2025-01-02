@@ -1,6 +1,47 @@
-![Typst](./typst.svg)
 
-`Typst` version 0.12. was used to create the supplied templates.
+<img src="thumbnail.png" width="300">
 
-![Guide](./Guide.svg)
+```typst
+#import "@preview/ailab-isetbz:0.1.0": *
+#show: AILAB.with(
+  title: text(smallcaps(title)),
+  abstract: abstract,
+  authors: 
+  (
+    (
+      name: students.at(0),
+      email: emails.at(0),
+      profile: profiles.at(0)
+    ),
+    (
+      name: students.at(1),
+      email: emails.at(1),
+      profile: profiles.at(1)
+    ),
+  ),
+  index-terms: terms,
+  // bibliography-file: "Biblio.bib",
+)
+```
+
+```typst
+#let title = "Lab Report"
+#let abstract = "The main topics discussed in the manuscript."
+#let students = ("Student 1", "Student 2")
+#let emails = ("student1@bizerte.r-iset.tn", "student2@bizerte.r-iset.tn")
+#let profiles = ("profile1", "profile2") // GITHUB Profiles
+#let terms = ("Typst", "GitHub", "Docker", "Julia", "Lab Report")
+```
+
+```typst
+#exo[Title][Content...]
+```
+
+```typst
+#solution[The solution]
+```
+
+```typst
+#test[Some test]
+```
 

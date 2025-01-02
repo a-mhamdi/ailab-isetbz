@@ -1,4 +1,5 @@
-#import "common/class.typ": *
+#import "@preview/ailab-isetbz:0.1.0": *
+
 #import "common/var.typ": *
 
 #let title = "Lab Report"
@@ -11,7 +12,7 @@
 // --- DO NOT EDIT ---
 #set document(keywords: terms, date: auto) 
 
-#show: ieee.with(
+#show: AILAB.with(
   title: text(smallcaps(title)),
   abstract: abstract,
   authors: 
