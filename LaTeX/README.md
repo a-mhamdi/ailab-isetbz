@@ -1,4 +1,4 @@
-![LaTeX](./latex.png)
+![LaTeX](./latex.svg)
 
 ### Installation
 
