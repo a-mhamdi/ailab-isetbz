@@ -1,4 +1,28 @@
 
+#import "@preview/octique:0.1.0": *
+
+// EXO
+#let c = counter("exo")
+#let exo(tlt, txt) = block[
+	#c.step()
+	#rect(fill: red, radius: 5pt)[*Task #context c.display(): #tlt *] 
+	#rect(fill: luma(221))[#txt]
+]
+
+// SOLUTION
+#let solution(sol) = block[
+	#rect(fill: olive)[#sol]
+]
+  
+// TEST SCENARIO
+#let test(tst) = [
+	#box(
+		height: 25pt,
+		image("common/attention.png", width: 10%)
+	)
+	#tst
+	]
+  
 #let AILAB(
   title: [Lab Report Title],
   authors: (),
@@ -46,7 +70,7 @@
   ): set figure.caption(position: top)
 
   // RAW THEME
-  set raw(theme: "Themes/Dracula.tmTheme")
+  set raw(theme: "common/Themes/Dracula.tmTheme")
   show raw: it => block(
  	fill: rgb("#1d2433"),
   	inset: 8pt,
@@ -71,8 +95,6 @@
 
     set text(10pt, weight: 600)
     if it.level == 1 [
-      // First-level headings are centered smallcaps.
-      // We don't want to number of the acknowledgment section.
       #let is-ack = it.body in ([Acknowledgment], [Acknowledgement])
       #set align(center)
       #set text(if is-ack { 10pt } else { 12pt })
@@ -85,7 +107,6 @@
       #it.body
       #v(13.75pt, weak: true)
     ] else if it.level == 2 [
-      // Second-level headings are run-ins.
       #set par(first-line-indent: 0pt)
       #set text(style: "italic")
       #v(10pt, weak: true)
@@ -96,7 +117,6 @@
       #it.body
       #v(10pt, weak: true)
     ] else [
-      // Third level headings are run-ins too, but different.
       #if it.level == 3 {
         numbering("1)", deepest)
         [ ]
@@ -105,12 +125,10 @@
     ]
   }
 
-  // Display the paper's title.
-  //set page(columns: 1)
   grid(
     columns: (auto, 1fr, auto),
     align: right,
-    [#box(width: 1.5cm, image("isetbz.jpg"))], [], [#smallcaps(text(weight: 700)[\ Institute of Technological Studies of Bizerte \ Department of Electrical Engineering])]
+    [#box(width: 1.5cm, image("common/isetbz.jpg"))], [], [#smallcaps(text(weight: 700)[\ Institute of Technological Studies of Bizerte \ Department of Electrical Engineering])]
   )
   v(10pt, weak: true)
   align(center, text(18pt, title))
@@ -149,11 +167,7 @@
 
 	
   // Start two column mode and configure paragraph properties.
-
   show: columns.with(2, gutter: 12pt)
-  //set page(columns: 2)
-  
-
   
   set par(justify: true)
 
@@ -168,7 +182,7 @@
     #v(2pt)
   ]
 
-  // Display the paper s contents.
+  // Display the paper's contents.
   body
 
   // Display bibliography.
@@ -177,27 +191,4 @@
     bibliography(bibliography-file, title: text(10pt)[References], style: "ieee")
   }
   
-  // EXO
-set page(height: 100pt)
-let c = counter("exo")
-let exo(tlt, txt) = block[
-  #c.step()
-  #rect(fill: red, radius: 5pt)[*Task #context c.display(): #tlt *] 
-  #rect(fill: luma(221))[#txt]
-]
-
-// SOLUTION
-let solution(sol) = block[
-  #rect(fill: olive)[#sol]
-]
-
-// TEST SCENARIO
-let test(tst) = [
-#box(
-	height: 25pt,
-	image("attention.png", width: 10%)
-)
-#tst
-]
-
 }

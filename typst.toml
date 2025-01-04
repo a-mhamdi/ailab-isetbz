@@ -6,8 +6,8 @@ authors = ["A. Mhamdi <@a-mhamdi>"]
 license = "MIT"
 description = "Typst template for lab reports tailored for engineering students at ISET Bizerte."
 repository = "https://github.com/a-mhamdi/ailab-isetbz"
-keywords = ["isetbz", "school", "engineering", "report"]
-disciplines = ["engineering", "computer-science", "ai", "education"]
+keywords = ["isetbz", "school", "engineering", "report", "ai"]
+disciplines = ["education", "engineering", "computer-science"]
 categories = ["report"]
 
 [template]
