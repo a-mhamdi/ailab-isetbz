@@ -1,5 +1,7 @@
 # AILAB-ISETBZ: AI Lab Report Template at ISET Bizerte
 
+[![Build Typst Document](https://github.com/a-mhamdi/ailab-isetbz/actions/workflows/compile.yml/badge.svg)](https://github.com/a-mhamdi/ailab-isetbz/actions/workflows/compile.yml)
+
 ## Installation
 You can use this template in the **Typst** web app by clicking `Create project in app` from the dashboard after searching for `ailab-isetbz`. As an alternative, you can start this project with the following command in the CLI:
 ```bash
