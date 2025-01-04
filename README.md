@@ -1,4 +1,4 @@
-# AILAB ISETBZ Lab Report Template for AI Lab at ISET Bizerte
+# AILAB-ISETBZ: AI Lab Report Template at ISET Bizerte
 
 ## Installation
 You can use this template in the **Typst** web app by clicking `Create project in app` from the dashboard after searching for `ailab-isetbz`. As an alternative, you can start this project with the following command in the CLI:
@@ -55,6 +55,7 @@ Use this block if a test is necessary:
 
 ## Preview
 The following image shows a preview of the lab report template.
+
 <img src="thumbnail.png" width="300">
 
 A detailed example can be found [here](https://github.com/a-mhamdi/ailab-isetbz/tree/main/example).
