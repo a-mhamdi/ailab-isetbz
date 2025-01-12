@@ -22,7 +22,7 @@ jobs:
         name: PDFs
         path: |
           Typst/template/main.pdf
-          Lab-Report.pdf
+          Typst/template/Lab-Report.pdf
     - name: Get current date
       id: date
       run: echo "DATE=$(date +%Y-%m-%d-%H:%M)" >> $GITHUB_ENV
@@ -32,4 +32,4 @@ jobs:
       with:
         files: |
           Typst/template/main.pdf
-          Lab-Report.pdf
+          Typst/example/Lab-Report.pdf
