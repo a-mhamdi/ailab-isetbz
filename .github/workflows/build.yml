@@ -22,7 +22,7 @@ jobs:
           root_file: LaTeX/Lab-Report-TeX.tex
           latexmk_shell_escape: true
         env:
-          TEXINPUTS: "./LaTeX/:"
+          TEXINPUTS: ".:./LaTeX/:"
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
@@ -42,5 +42,4 @@ jobs:
           files: |
             Typst/template/main.pdf
             Typst/example/Lab-Report-Typ.pdf
-            LaTeX/Lab-Report-TeX.pdf
             Lab-Report-TeX.pdf
