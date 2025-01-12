@@ -1,5 +1,5 @@
 /* export XDG_DATA_HOME=~/.local/share # -> `namespace` is `@local` */
-#import "@local/ailab-isetbz:0.1.0": *
+#import "@preview/ailab-isetbz:0.1.0": *
 
 #let title = "Lab Report"
 #let abstract = "The main topics discussed in the manuscript."
